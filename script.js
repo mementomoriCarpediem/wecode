@@ -63,7 +63,7 @@ function guess(e) {
       `;
   } else {
     html = `
-    <p class='score'> ${strike}S ${ball}B ${out}O </p>
+    <p class='score'> ${strike}<span style="color:blue">S</span> ${ball}<span style="color:yellow">B</span> ${out}<span style="color:red">O</span> </p>
     `;
     htmlHistory = `<p class='score'> ${input.value}  ================>  ${strike}S ${ball}B ${out}O </p>
     `;
