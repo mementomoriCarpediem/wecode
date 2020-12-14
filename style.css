@@ -16,6 +16,7 @@ nav {
   justify-content: space-around;
   padding: 0.3rem 0;
   font-size: 2rem;
+  z-index: 1;
 }
 
 .nav-content {
@@ -71,6 +72,8 @@ span {
 
 .flex-contents {
   display: flex;
+  width: 80%;
+  margin: auto;
   flex-direction: row;
   justify-content: space-evenly;
   flex-wrap: wrap;
@@ -98,4 +101,13 @@ figure {
 
 figcaption {
   text-align: center;
+}
+
+button {
+  width: 20%;
+  font-size: 3rem;
+  background: skyblue;
+  color: black;
+  height: auto;
+  margin: 20px 40%;
 }

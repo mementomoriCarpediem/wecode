@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>숫자야구게임</title>
+    <style>
+      .container {
+        background-color: wheat;
+        border: 1px solid black;
+        width: 40%;
+        height: 30%;
+        margin: auto;
+        display: flex;
+        flex-direction: row;
+      }
+      .history {
+        border: 1px solid black;
+        width: 40%;
+        height: 30%;
+        margin: auto;
+        background-color: wheat;
+        text-align: center;
+      }
+
+      form {
+        border: 5px solid rebeccapurple;
+        width: 45%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+      form > * {
+        margin: 10px 10px;
+        text-align: center;
+      }
+      label {
+        font-size: 1.5rem;
+      }
+      input {
+        width: 90%;
+      }
+      .resultDisplay {
+        margin: auto;
+
+        font-size: 3rem;
+      }
+      .button {
+        display: flex;
+        flex-direction: row;
+      }
+      button {
+        margin: 10px;
+        font-size: 1.2rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <form>
+        <label for="guessNumber">숫자를 맞춰보세요</label>
+        <input
+          type="text"
+          name="guessNumber"
+          id="guessNumber"
+          placeholder="서로 다른 4자리 숫자를 입력해주세요."
+          maxlength="4"
+        />
+        <div class="button">
+          <button class="submit">이거 맞아?</button>
+          <button class="submit">Repaly</button>
+        </div>
+      </form>
+      <div class="resultDisplay"></div>
+    </div>
+    <div class="history">
+      <h3>History</h3>
+    </div>
+    <script type="text/javascript" src="script.js"></script>
+  </body>
+</html>
