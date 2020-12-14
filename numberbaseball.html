@@ -3,12 +3,24 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Nanum+Gothic&display=swap"
+      rel="stylesheet"
+    />
     <title>숫자야구게임</title>
     <style>
+      body {
+        margin: 0;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        font-family: 'Do Hyeon', 'Nanum Gothic', sans-serif;
+      }
+
       .container {
         background-color: wheat;
         border: 1px solid black;
-        width: 40%;
+        width: 90%;
         height: 30%;
         margin: auto;
         display: flex;
@@ -16,7 +28,7 @@
       }
       .history {
         border: 1px solid black;
-        width: 40%;
+        width: 90%;
         height: 30%;
         margin: auto;
         background-color: wheat;
@@ -60,7 +72,10 @@
     <h1 style="text-align: center">숫자야구 게임</h1>
     <div class="container">
       <form>
-        <label for="guessNumber">숫자를 맞춰보세요</label>
+        <label for="guessNumber"
+          >숫자를 <br />
+          맞춰보세요</label
+        >
         <input
           type="text"
           name="guessNumber"
