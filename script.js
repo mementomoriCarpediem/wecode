@@ -22,39 +22,68 @@ function guess(e) {
   const guessNum = Array.from(input.value);
   console.log(guessNum);
 
-  for (var i = 0; i < 3; i++) {
-    // alert('동일한 숫자가 2번이상 반복되지 않도록 다시 입력해주세요.');
-    // this.value = '';
+  // const result = guessNum.reduce((total, num) => {
+  //   if (!total[num]) {
+  //     total[num] = 0;
+  //   }
+  //   total[num]++;
+  //   return total;
+  // }, {});
+  // console.log(result);
 
-    let strike = 0;
-    let ball = 0;
-    let out = 0;
+  // while()
 
-    for (var i = 0; i < 4; i++) {
-      if (parseInt(guessNum[i]) == computerNum[i]) {
-        strike++;
-      } else if (computerNum.includes(parseInt(guessNum[i]))) {
-        ball++;
-      } else {
-        out++;
-      }
-      console.log(computerNum.includes(parseInt(guessNum[i])));
+  // const isOK = console.log(isOK);
+
+  // if ((isOK = false)) {
+  //   alert('동일한 숫자가 2번이상 반복되지 않도록 다시 입력해주세요.');
+  //   return (input.value = '');
+  // } else {
+  let strike = 0;
+  let ball = 0;
+  let out = 0;
+
+  for (var i = 0; i < 4; i++) {
+    if (parseInt(guessNum[i]) == computerNum[i]) {
+      strike++;
+    } else if (computerNum.includes(parseInt(guessNum[i]))) {
+      ball++;
+    } else {
+      out++;
     }
-    console.log(strike, ball, out);
+  }
+  console.log(strike, ball, out);
 
-    const html = `
+  let html;
+  let htmlHistory;
+
+  if (strike == 4) {
+    html = `
+      <p class='score'> 정답입니다.👍  </p>
+      `;
+  } else {
+    html = `
     <p class='score'> ${strike}S ${ball}B ${out}O </p>
     `;
-    score.innerHTML = html;
-    his.push(html);
-    history.innerHTML = his.join('');
+    htmlHistory = `<p class='score'> ${input.value}  ================>  ${strike}S ${ball}B ${out}O </p>
+    `;
   }
+  score.innerHTML = html;
+  his.push(htmlHistory);
+  history.innerHTML = his.join('');
 }
+
+function reset() {
+  input.value = '';
+}
+
 const history = document.querySelector('.history');
 const score = document.querySelector('.resultDisplay');
 const input = document.querySelector('#guessNumber');
-const submit = document.querySelector('.submit');
+const submit = document.querySelector('#guess');
+const replay = document.querySelector('#replay');
 submit.addEventListener('click', guess);
+replay.addEventListener('click', reset);
 
 pickRanNum();
 // # 코드 작성 순서
