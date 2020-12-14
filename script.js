@@ -59,13 +59,13 @@ function guess(e) {
 
   if (strike == 4) {
     html = `
-      <p class='score'> 정답입니다.👍  </p>
+      <p class='score'> I love you ❤️❤️ </p>
       `;
   } else {
     html = `
     <p class='score'> ${strike}<span style="color:blue">S</span> ${ball}<span style="color:yellow">B</span> ${out}<span style="color:red">O</span> </p>
     `;
-    htmlHistory = `<p class='score'> ${input.value}  ================>  ${strike}S ${ball}B ${out}O </p>
+    htmlHistory = `<p class='score' ㄴ> ${input.value}  ================>  ${strike}S ${ball}B ${out}O </p>
     `;
   }
   score.innerHTML = html;
