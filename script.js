@@ -59,8 +59,10 @@ function guess(e) {
 
   if (strike == 4) {
     html = `
-      <p class='score'> I love you ❤️❤️ </p>
+      <p class='score'> Conglatulation~ 👏👏</p>
       `;
+    var applause = new Audio('applause.wav');
+    applause.play();
   } else {
     html = `
     <p class='score'> ${strike}<span style="color:blue">S</span> ${ball}<span style="color:yellow">B</span> ${out}<span style="color:red">O</span> </p>
