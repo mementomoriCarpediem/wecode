@@ -22,23 +22,17 @@ function guess(e) {
   const guessNum = Array.from(input.value);
   console.log(guessNum);
 
-  // const result = guessNum.reduce((total, num) => {
-  //   if (!total[num]) {
-  //     total[num] = 0;
-  //   }
-  //   total[num]++;
-  //   return total;
-  // }, {});
-  // console.log(result);
+  guessNum.some((num) => {
+    const guessNumValidate = Array.from(input.value);
+    console.log(guessNumValidate);
+    guessNumValidate.splice(guessNumValidate.indexOf(num), 1);
 
-  // while()
+    if (guessNumValidate.includes(num)) {
+      alert('동일한 숫자가 2번이상 반복되지 않도록 다시 입력해주세요.');
+      return (input.value = '');
+    }
+  });
 
-  // const isOK = console.log(isOK);
-
-  // if ((isOK = false)) {
-  //   alert('동일한 숫자가 2번이상 반복되지 않도록 다시 입력해주세요.');
-  //   return (input.value = '');
-  // } else {
   let strike = 0;
   let ball = 0;
   let out = 0;
@@ -59,16 +53,16 @@ function guess(e) {
 
   if (strike == 4) {
     html = `
-      <p class='score'> Conglatulation~ 👏👏</p>
-      `;
+          <p class='score'> Conglatulation~ 👏👏</p>
+          `;
     var applause = new Audio('applause.wav');
     applause.play();
   } else {
     html = `
-    <p class='score'> ${strike}<span style="color:blue">S</span> ${ball}<span style="color:yellow">B</span> ${out}<span style="color:red">O</span> </p>
-    `;
+        <p class='score'> ${strike}<span style="color:blue">S</span> ${ball}<span style="color:yellow">B</span> ${out}<span style="color:red">O</span> </p>
+        `;
     htmlHistory = `<p class='score' ㄴ> ${input.value}  ================>  ${strike}S ${ball}B ${out}O </p>
-    `;
+        `;
   }
   score.innerHTML = html;
   his.push(htmlHistory);
