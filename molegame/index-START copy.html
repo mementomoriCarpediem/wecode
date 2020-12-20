@@ -69,7 +69,15 @@
         showCount++;
         setTimeout(() => {
           holeAppear.classList.remove('up');
-          if (showCount < 10) startGame();
+          if (showCount < 10) {
+            startGame();
+          } else {
+            const overmsg = document.createElement('p');
+            overmsg.style.fontSize = '5rem';
+            overmsg.style.backgroundColor = 'wheat';
+            overmsg.textContent = `GameOver, 대단해요!`;
+            scoreBoard.appendChild(overmsg);
+          }
         }, time * 800);
       }
 
