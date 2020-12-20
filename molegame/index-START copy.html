@@ -59,7 +59,7 @@
 
       function upTime() {
         //0 ~ 2초 사이 시간 뽑기
-        time = Math.random() * 2;
+        time = Math.random() * 1.6 + 0.2;
       }
 
       function showMole() {
@@ -70,7 +70,7 @@
         setTimeout(() => {
           holeAppear.classList.remove('up');
           if (showCount < 10) startGame();
-        }, time * 1000);
+        }, time * 800);
       }
 
       function catchMole() {
